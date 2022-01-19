@@ -1,0 +1,14 @@
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.big-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.big-menu a {
+    margin-right: 10px;
+    
+}
