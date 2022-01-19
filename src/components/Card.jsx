@@ -1,30 +1,62 @@
-import * as React from 'react';
+import { Link } from 'react-router-dom';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import  CardActionArea  from '@mui/material/CardActionArea';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PublicIcon from '@mui/icons-material/Public';
 
-export default function ActionAreaCard() {
+//Styles
+import  './Card.css';
+
+
+export default function ActionAreaCard({ item}) {
+  // Create our number formatter.
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'COP',
+  maximumFractionDigits: 0,
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
+
+  const price = parseInt(item.price)
+  const priceFormat = formatter.format(price);
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Link  to={{pathname: `/producto/${item.id}`, query: {item}}}>
+    <Card className="card" sx={{ maxWidth: 345, minHeight:300   }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          height="240"
+          image={item.imgUrl} 
+          alt="emerald"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {item.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography variant="body2" color="text.secondary" className="card">
+            {item.details}
           </Typography>
+          <div className="specs">
+          <Typography variant="body2" color="text.secondary" className="card">
+            Precio: {priceFormat}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" className="card">
+            ct: {item.ct}
+          </Typography>
+          </div>
         </CardContent>
       </CardActionArea>
+      <button className="comprar" onClick={()=>console.log("comprar activado")}> <ShoppingCartIcon /> </button>
+      <button className="comprar"> <PublicIcon /> </button>
     </Card>
+    </Link>
   );
 }

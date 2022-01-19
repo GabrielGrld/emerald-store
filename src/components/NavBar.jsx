@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-import * as React from 'react';
+//Material UI components
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,14 +15,19 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
+//Iconst Component
 import StoreIcon from '@mui/icons-material/Store';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+// Style
+import './NavBar.css'
+
+// const pages = ['Products', 'Pricing', 'Blog', 'Esmeraldas'];
+const pages = ['Collares', 'Pulseras', 'Pendientes', 'Esmeraldas'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -38,18 +45,20 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" style={{ background: '#064635' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+
+        <div  >
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <StoreIcon /> {' '} LOGO
+            <Link to='/'> Emerald {' '}<StoreIcon />  </Link>
           </Typography>
-
+            </div>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -80,29 +89,36 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                
+                <MenuItem  key={page} >
+                
+                  <div >
+                  <Typography textAlign="center" ><Link to={`/productos/${page}`}>{page}</Link> </Typography>
+                  </div>                  
                 </MenuItem>
+                
               ))}
             </Menu>
           </Box>
+
+          
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
+          ><div >
+            <Link to='/'>Emerald <StoreIcon /> </Link></div>
           </Typography>
+
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+
+              <div key={page}  className="big-menu">
+              <Typography textAlign="center" ><Link to={`/productos/${page}`}>{page}</Link> </Typography>
+              </div>
+
             ))}
           </Box>
 
