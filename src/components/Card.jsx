@@ -28,9 +28,11 @@ var formatter = new Intl.NumberFormat('en-US', {
   const price = parseInt(item.price)
   const priceFormat = formatter.format(price);
   return (
-    <Link  to={{pathname: `/producto/${item.id}`, query: {item}}}>
+    <>
+    
     <Card className="card" sx={{ maxWidth: 345, minHeight:300   }}>
-      <CardActionArea>
+    <Link  to={{pathname: `/producto/${item.id}`, query: {item}}}>
+      <CardActionArea>      
         <CardMedia
           component="img"
           height="240"
@@ -54,9 +56,11 @@ var formatter = new Intl.NumberFormat('en-US', {
           </div>
         </CardContent>
       </CardActionArea>
+      </Link>
       <button className="comprar" onClick={()=>console.log("comprar activado")}> <ShoppingCartIcon /> </button>
       <button className="comprar"> <PublicIcon /> </button>
     </Card>
-    </Link>
+    
+    </>
   );
 }
