@@ -8,6 +8,9 @@ import Home from './pages/home/Home'
 import Product from './pages/product/Product';
 import ProductCategory from './pages/productscat/ProductCategory';
 
+//Icons
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 //Styles
 import './App.css';
@@ -20,7 +23,8 @@ const [activeSection, setActiveSection] = useState('home');
 
   return (
     <div className="App">
-    <div className="app-header">     
+    <div className="app-header">
+    <div className="top-banner"><p>Compra Protegida <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.5/mercadolibre/logo__large_plus.png"/></p><div className="icons"><a target="_blank" href='https://www.facebook.com/'><FacebookIcon/></a><a href="https://www.instagram.com/"><InstagramIcon/></a></div></div>     
       <BrowserRouter>
        <NavBar />
          <Switch>

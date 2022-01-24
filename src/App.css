@@ -10,11 +10,29 @@
   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top-banner{
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row;
+  background-color: black;
+  color: white;  
+  height: 35px;
 }
+.top-banner img{
+  height: 20px;
+  margin: auto 5px; 
+}
+
+.top-banner p{
+  height: auto;
+  margin: auto 5px; 
+}
+.top-banner .icons{
+  height: auto;
+  margin: auto 5px; 
+
+}
+
 
 .App-header {
   background-color: #519259;
@@ -32,11 +50,3 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
