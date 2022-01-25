@@ -30,7 +30,7 @@ var formatter = new Intl.NumberFormat('en-US', {
   return (
     <>
     
-    <Card className="card" sx={{ maxWidth: 345, minHeight:300   }}>
+    <Card className="card" sx={{ maxWidth: 345, minHeight:450 }}>
     <Link  to={{pathname: `/producto/${item.id}`, query: {item}}}>
       <CardActionArea>      
         <CardMedia
@@ -41,10 +41,10 @@ var formatter = new Intl.NumberFormat('en-US', {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {item.name}
+            {item.name.length<24?item.name:item.name.substring(0,22)+"..."}
           </Typography>
           <Typography variant="body2" color="text.secondary" className="card">
-            {item.details}
+            {item.details.length<60?item.details:item.details.substring(0,62)+"..."}
           </Typography>
           <div className="specs">
           <Typography variant="body2" color="text.secondary" className="card">
@@ -57,8 +57,10 @@ var formatter = new Intl.NumberFormat('en-US', {
         </CardContent>
       </CardActionArea>
       </Link>
+      <div className='buttons'>
       <button className="comprar" onClick={()=>console.log("comprar activado")}> <ShoppingCartIcon /> </button>
       <button className="comprar"> <PublicIcon /> </button>
+      </div>
     </Card>
     
     </>
