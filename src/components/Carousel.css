@@ -44,15 +44,6 @@
     background-color: transparent;
     color: grey;
 }
-.hide{
-    color: transparent;
-}
-.right-arrow:hover  .hide {
-    display: block;
-    color: white;
-  }
-
-
 .left-arrow{
     display:flex;
     justify-content:center;
@@ -68,6 +59,14 @@
     background-color: transparent;
     color: transparent;  
 }
+.hide{
+    color: transparent;
+}
+.right-arrow:hover  .hide {
+    display: block;
+    color: white;
+  }
+
 .left-arrow:hover .hide {
     display: block;
     color: white;

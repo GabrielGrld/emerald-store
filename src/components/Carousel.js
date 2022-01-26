@@ -98,7 +98,7 @@ function SwipeableTextMobileStepper() {
           color: "red",
           display:"flex",
           color:"yellow",
-          height:"25px",
+          height:"2%",
           justifyContent:"center",
           bottom:"-1px",
           position:"absolute",
