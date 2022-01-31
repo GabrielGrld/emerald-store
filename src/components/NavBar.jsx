@@ -46,6 +46,7 @@ const NavBar = () => {
 
   return (
     <AppBar position="sticky" style={{ background: '#064635' }}>
+    {/* <AppBar position="sticky" style={{ background: '#001B00' }}> */}
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -112,10 +113,10 @@ const NavBar = () => {
           </Typography>
 
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box className="top-menu" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
 
-              <div key={page}  className="big-menu">
+              <div key={page}  className="menu-item">
               <Typography textAlign="center" ><Link to={`/productos/${page}`}>{page}</Link> </Typography>
               </div>
 
