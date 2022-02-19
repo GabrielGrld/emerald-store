@@ -7,6 +7,8 @@ import NavBar from "./components/NavBar"
 import Home from './pages/home/Home'
 import Product from './pages/product/Product';
 import ProductCategory from './pages/productscat/ProductCategory';
+import BottomNav from './components/BottomNav'
+import Footer from './components/Footer';
 
 //Icons
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -24,7 +26,8 @@ const [activeSection, setActiveSection] = useState('home');
   return (
     <div className="App">
     <div className="app-header">
-    <div className="top-banner"><p>Compra Protegida <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.5/mercadolibre/logo__large_plus.png"/></p><div className="icons"><a target="_blank" href='https://www.facebook.com/'><FacebookIcon/></a><a href="https://www.instagram.com/"><InstagramIcon/></a></div></div>     
+    {/* <div className="top-banner"><p>Compra Protegida <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.5/mercadolibre/logo__large_plus.png"/></p><div className="icons"><a target="_blank" href='https://www.facebook.com/'><FacebookIcon/></a><a href="https://www.instagram.com/"><InstagramIcon/></a></div></div>     
+       */}
       <BrowserRouter>
        <NavBar />
          <Switch>
@@ -43,17 +46,16 @@ const [activeSection, setActiveSection] = useState('home');
 
 
          </Switch>
-
+         {/* Bottom nav with home, woman and men options */}
+         {/* <BottomNav />  */}
       </BrowserRouter>
     
 
 
 
         </div>
-      <footer>
-        <div style={{"minHeight":"1vh"}}><p>Emerald Store</p></div>
-      </footer>
       
+      <Footer />
     </div>
   );
 }
