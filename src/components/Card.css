@@ -1,8 +1,7 @@
 .card {
     position: relative;
     border-color: #F0BB62;
-    border-width: 20px;
-    /* background-color: rgb(152, 201, 247); */
+    border-width: 20px;    
     color: var(--main-bg-color);
 }
 
