@@ -1,6 +1,6 @@
 .App {
-  text-align: center;
-  background-image: -webkit-linear-gradient(top right, #064635, #519259);
+  text-align: center; 
+  background-color: var(--main-bg-color);  
   min-height: 100vh;
 }
 
@@ -13,9 +13,9 @@
 .top-banner{
   display: flex;
   justify-content:space-between;
-  flex-direction: row;
-  background-color: black;
-  color: white;  
+  flex-direction: row;  
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color); 
   height: 35px;
 }
 .top-banner img{
@@ -33,9 +33,8 @@
 
 }
 
-
-.App-header {
-  background-color: #519259;
+/* .App-header {
+  background-color: red;
   background-image: -webkit-linear-gradient(top right, #064635, #519259);
   min-height: 100vh;
   display: flex;
@@ -43,8 +42,9 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
+  color: var(--main-text-color);
+  
+} */
 
 .App-link {
   color: #61dafb;
