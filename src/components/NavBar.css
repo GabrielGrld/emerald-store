@@ -16,8 +16,9 @@ a {
 
 .top-menu .menu-item {
     margin-right: 5px;
-    border-right: 1px solid #e4e4e4;
+    border-right: 1px solid var(--main-text-color);
     padding-right: 5px;
+    color: var(--main-text-color);
 }
 .top-menu .menu-item:last-child {
     border: 0;

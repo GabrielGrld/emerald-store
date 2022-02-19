@@ -17,7 +17,7 @@
 .description{
     align-items: center;
     background-color: '';
-    color:white;
+    color:var(--main-text-color);
     margin-left:0%;
     max-width: 600px;
 }

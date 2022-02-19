@@ -3,13 +3,13 @@
     border-color: #F0BB62;
     border-width: 20px;
     /* background-color: rgb(152, 201, 247); */
-    color: #064635;
+    color: var(--main-bg-color);
 }
 
 .card .comprar {
-    background-color: #0b795b; /* Green */
+    background-color: var(--main-bg-color); 
     border: none;
-    color: white;
+    color: var(--main-text-color);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
