@@ -19,7 +19,7 @@
     background-color: #cccccc;
     max-width:100%;
     max-height:100%;
-    border-radius: 2%;
+    border-radius: 0;
 }
 
 .carousel-content h2, .carousel-content p{
@@ -34,7 +34,7 @@
     justify-content:center;
     align-items:center;    
     position:absolute;
-    background-color: '';
+    background-color: 'blue';
     align-items: center;
     width: 3%;
     height:100%;
@@ -44,6 +44,7 @@
     background-color: transparent;
     color: grey;
 }
+
 .left-arrow{
     display:flex;
     justify-content:center;

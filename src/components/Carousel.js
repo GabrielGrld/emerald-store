@@ -17,24 +17,24 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    label: 'Anillo de diamante',
     imgPath:
-    "https://www.esmeraldascolombia.com/wp-content/uploads/2021/06/Banner-Cadenas-Negro-1536x432-1.jpg",
+    "https://raw.githubusercontent.com/GabrielGrld/emerald-store/main/imgs/anilloresized.jpg",
   },
   {
-    label: 'Bird',
+    label: '3 anillos de diverso material',
     imgPath:
-    "https://www.esmeraldascolombia.com/wp-content/uploads/2021/06/Banner-Dijes-Mujer-OP.jpg",
+    "https://raw.githubusercontent.com/GabrielGrld/emerald-store/main/imgs/anillosresized.jpg",
   },
   {
-    label: 'Bali, Indonesia',
+    label: 'Aretes de alta Calidad',
     imgPath:
-    "https://www.esmeraldascolombia.com/wp-content/uploads/2021/06/Banner-Aretes-2048x576-1.jpg",
+    "https://raw.githubusercontent.com/GabrielGrld/emerald-store/main/imgs/aretes2resized.jpg",
   },
   {
-    label: 'Goč, Serbia',
+    label: 'Arete elaborado finamente',
     imgPath:
-    "https://www.esmeraldascolombia.com/wp-content/uploads/2021/06/Banner-Reykon2-2048x576-1.jpg",
+    "https://raw.githubusercontent.com/GabrielGrld/emerald-store/main/imgs/aretesresized.png",
   },
 ];
 
@@ -90,7 +90,8 @@ function SwipeableTextMobileStepper() {
         ))}        
       </AutoPlaySwipeableViews>
       {/* {start code to refactor} */}
-      <MobileStepper 
+        {/* Remove three blue dots  */}
+    {/* <MobileStepper 
         sx={{ 
           maxWidth: '100%', 
           flexGrow: 1, 
@@ -107,9 +108,8 @@ function SwipeableTextMobileStepper() {
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
-        variant='dots'
-              
-      />
+        variant='dots'              
+      /> */}
 
       {/* ends code to refactor */}
       <div className="left-arrow"> 
@@ -132,6 +132,7 @@ function SwipeableTextMobileStepper() {
           sx={{           
           color: "transparent",
           height:"100%",
+          
           }} 
           size="small"          
             onClick={handleNext}
