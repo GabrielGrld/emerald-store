@@ -17,6 +17,9 @@ import MenuItem from '@mui/material/MenuItem';
 
 //Iconst Component
 import StoreIcon from '@mui/icons-material/Store';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 // Style
 import './NavBar.css'
@@ -45,7 +48,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="sticky" style={{ background: '#064635' }}>
+    <AppBar position="sticky" style={{ background: 'var(--main-bg-color)', color:'var(--main-text-color)' }}>
     {/* <AppBar position="sticky" style={{ background: '#001B00' }}> */}
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -57,7 +60,7 @@ const NavBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <Link to='/'> Emerald {' '}<StoreIcon />  </Link>
+            <Link to='/'> Emerald {' '}<StoreIcon style={{ background: 'var(--main-bg-color)' }} />  </Link>
           </Typography>
             </div>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -70,6 +73,7 @@ const NavBar = () => {
               color="inherit"
             >
               <MenuIcon />
+              <SearchIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -122,13 +126,25 @@ const NavBar = () => {
 
             ))}
           </Box>
+          {/*  Here I need to add a search functionality  */}
+              <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block'  } }}>
+              <SearchIcon />
+              </Box>
 
+              <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Comprar">
+              <ShoppingBagOutlinedIcon />
+              </Tooltip>
+              </Box>
+              
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <PersonOutlineIcon sx={{ color: 'var(--main-text-color)' }} />
               </IconButton>
             </Tooltip>
+            
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -149,8 +165,10 @@ const NavBar = () => {
                 <MenuItem key={setting} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
+
               ))}
             </Menu>
+            
           </Box>
         </Toolbar>
       </Container>

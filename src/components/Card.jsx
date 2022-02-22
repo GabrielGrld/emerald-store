@@ -30,7 +30,7 @@ var formatter = new Intl.NumberFormat('en-US', {
   return (
     <>
     
-    <Card className="card" sx={{ maxWidth: 345, minHeight:450 }}>
+    <Card className="card" sx={{ maxWidth: 320, minHeight:450 }}>
     <Link  to={{pathname: `/producto/${item.id}`, query: {item}}}>
       <CardActionArea>      
         <CardMedia
