@@ -8,8 +8,10 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
+
 //Components
 import Carousel from '../../components/Carousel'
+
 
 
 //styles
@@ -37,7 +39,7 @@ function Home(){
 
     return(
       
-    <div className="container" style={{"margin":"1em"}}>
+    <div className="container" style={{"margin":"1em 0"}}>
     <Carousel />
     
     <div>
@@ -45,11 +47,11 @@ function Home(){
       
       
       <Box sx={{ flexGrow: 1 }} >
-      <Grid container spacing={2} justify = "center"   >
+      <Grid container spacing={1} justify = "center" style={{"widht":"100%", margin:"0.1%"}}  >
       {error && <p>{error}</p>}
  
 {products && products.map((document) => (   
-  (<Grid  item xs={12} sm={6} md={4} lg ={3}>    
+  (<Grid   item xs={12} sm={6} md={4} lg ={4}>    
     <div key={document.id} align="center">
     <Card  
           key = {document.imgUrl}
@@ -67,14 +69,9 @@ function Home(){
 
     </Box>
     </div>
-      
-      
-      
-      
-      
-      
-      
-      
+
+    
+    
       </div>)
 }
 
